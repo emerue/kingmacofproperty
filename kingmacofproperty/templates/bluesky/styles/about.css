@@ -1,0 +1,1215 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Color Variables */
+:root {
+    --primary-color: #2c2423;
+    --secondary-color: #d4af37;
+    --gold-color: #ffd700;
+    --accent-color: #7e594a;
+    --text-light: #faf9f8;
+    --text-dark: #2c2423;
+    --background-dark: #1a1a1a;
+    --background-light: #faf9f8;
+    --border-color: #c1aba0;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --gold-gradient: linear-gradient(135deg, #d4af37 0%, #ffd700 50%, #b8860b 100%);
+    --luxury-shadow: 0 25px 50px rgba(212, 175, 55, 0.2);
+}
+
+/******************************
+
+[Table of Contents]
+
+1. Fonts
+2. Body and some general stuff
+3. Header
+4. Menu
+5. Home
+6. Home Search
+7. About
+8. Realtors
+9. Newsletter
+10. Footer
+
+******************************/
+
+/***********
+1. Fonts
+***********/
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,500,600,700,800,900');
+
+/*********************************
+2. Body and some general stuff
+*********************************/
+
+*
+{
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
+    text-shadow: rgba(0,0,0,.01) 0 0 1px;
+}
+body
+{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    /* Changed: Background to dark, text to light/primary */
+    background: var(--background-dark); 
+    color: var(--border-color); /* Used border-color as a soft light text */
+}
+div
+{
+    display: block;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+ul
+{
+    list-style: none;
+    margin-bottom: 0px;
+}
+p
+{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    line-height: 1.8666;
+    font-weight: 500;
+    /* Changed: Paragraph text to a soft light color */
+    color: var(--border-color); 
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
+    text-shadow: rgba(0,0,0,.01) 0 0 1px;
+}
+p a
+{
+    display: inline;
+    position: relative;
+    color: inherit;
+    /* Changed: Link border to accent color */
+    border-bottom: solid 1px var(--accent-color);
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+}
+p:last-of-type
+{
+    margin-bottom: 0;
+}
+a, a:hover, a:visited, a:active, a:link
+{
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
+    text-shadow: rgba(0,0,0,.01) 0 0 1px;
+}
+p a:active
+{
+    position: relative;
+    /* Changed: Active link color to gold */
+    color: var(--gold-color);
+}
+p a:hover
+{
+    /* Changed: Hover state for paragraph links */
+    color: var(--text-dark);
+    background: var(--accent-color);
+}
+p a:hover::after
+{
+    opacity: 0.2;
+}
+::selection
+{
+    /* Changed: Selection color to gold/secondary color */
+    background: var(--secondary-color);
+    color: var(--text-dark);
+}
+p::selection
+{
+    /* Kept empty to inherit from ::selection */
+}
+h1{font-size: 48px;}
+h2{font-size: 36px;}
+h3{font-size: 24px;}
+h4{font-size: 18px;}
+h5{font-size: 14px;}
+h1, h2, h3, h4, h5, h6
+{
+    font-family: 'Montserrat', sans-serif;
+    /* Changed: Headings color to text-light/primary color */
+    color: var(--text-light); 
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
+    text-shadow: rgba(0,0,0,.01) 0 0 1px;
+}
+h1::selection, 
+h2::selection, 
+h3::selection, 
+h4::selection, 
+h5::selection, 
+h6::selection
+{
+    /* Kept empty to inherit from ::selection */
+}
+.form-control
+{
+    /* Changed: Form control text color to primary */
+    color: var(--primary-color);
+}
+section
+{
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+}
+.clear
+{
+    clear: both;
+}
+.clearfix::before, .clearfix::after
+{
+    content: "";
+    display: table;
+}
+.clearfix::after
+{
+    clear: both;
+}
+.clearfix
+{
+    zoom: 1;
+}
+.float_left
+{
+    float: left;
+}
+.float_right
+{
+    float: right;
+}
+.trans_200
+{
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+}
+.trans_300
+{
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+.trans_400
+{
+    -webkit-transition: all 400ms ease;
+    -moz-transition: all 400ms ease;
+    -ms-transition: all 400ms ease;
+    -o-transition: all 400ms ease;
+    transition: all 400ms ease;
+}
+.trans_500
+{
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+.fill_height
+{
+    height: 100%;
+}
+.super_container
+{
+    width: 100%;
+    overflow: hidden;
+}
+.prlx_parent
+{
+    overflow: hidden;
+}
+.prlx
+{
+    height: 130% !important;
+}
+.parallax-window
+{
+    min-height: 400px;
+    background: transparent;
+}
+.parallax_background
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.nopadding
+{
+    padding: 0px !important;
+}
+.button
+{
+    width: 193px;
+    height: 72px;
+    /* Changed: Button background to gold gradient */
+    background: var(--gold-gradient);
+    text-align: center;
+    border-radius: 36px;
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+}
+.button:hover
+{
+    /* Changed: Button hover shadow to luxury shadow */
+    box-shadow: var(--luxury-shadow);
+}
+.button a
+{
+    display: block;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+    /* Changed: Button text color to dark */
+    color: var(--text-dark);
+    line-height: 72px;
+}
+.section_title
+{
+    font-size: 30px;
+    font-weight: 600;
+    /* Changed: Section title color to text-light */
+    color: var(--text-light);
+    line-height: 0.75;
+}
+.section_subtitle
+{
+    font-size: 14px;
+    font-weight: 500;
+    /* Changed: Section subtitle color to border-color */
+    color: var(--border-color);
+    line-height: 0.75;
+    margin-top: 15px;
+}
+
+/*********************************
+3. Header
+*********************************/
+
+.header
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* Changed: Header background to primary color */
+    background: var(--primary-color);
+    z-index: 200;
+    border-bottom: solid 1px transparent;
+    /* Changed: Border gradient to gold gradient */
+    border-image: var(--gold-gradient);
+    border-image-slice: 1;
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+}
+.header_content
+{
+    height: 101px;
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+}
+.header.scrolled
+{
+    /* Changed: Scrolled header background to a slightly transparent primary color */
+    background: rgba(44,36,35,0.9);
+}
+.header.scrolled .header_content
+{
+    height: 80px;
+}
+.logo
+{
+    width: 110px;
+}
+.logo img
+{
+    max-width: 100%;
+}
+.main_nav
+{
+    margin-left: 157px;
+}
+.main_nav ul li
+{
+    display: inline-block;
+}
+.main_nav ul li:not(:last-child)
+{
+    margin-right: 60px;
+}
+.main_nav ul li a
+{
+    font-size: 16px;
+    font-weight: 500;
+    /* Changed: Nav link color to text-light */
+    color: var(--text-light);
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+}
+.main_nav ul li.active a,
+.main_nav ul li a:hover
+{
+    /* Changed: Active/Hover nav link color to secondary color (gold) */
+    color: var(--secondary-color);
+}
+.phone_num
+{
+    height: 43px;
+    border-radius: 22px;
+    /* Changed: Phone button background to gold gradient */
+    background: var(--gold-gradient);
+    padding: 2px;
+    overflow: hidden;
+}
+.phone_num_inner
+{
+    width: 100%;
+    height: 100%;
+    padding-left: 16px;
+    padding-right: 18px;
+    /* Changed: Phone inner background to primary color */
+    background: var(--primary-color);
+    border-radius: 20px;
+}
+.phone_num span
+{
+    font-size: 16px;
+    font-weight: 500;
+    /* Changed: Phone number text color to text-light */
+    color: var(--text-light);
+    margin-left: 11px;
+    line-height: 39px;
+}
+.hamburger
+{
+    display: none;
+    cursor: pointer;
+}
+.hamburger i
+{
+    font-size: 18px;
+    /* Changed: Hamburger icon color to text-light */
+    color: var(--text-light);
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+}
+.hamburger i:hover
+{
+    /* Changed: Hamburger icon hover color to secondary (gold) */
+    color: var(--secondary-color);
+}
+
+/*********************************
+4. Menu
+*********************************/
+
+.menu
+{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    /* Changed: Menu background to gold gradient */
+    background: var(--gold-gradient);
+    z-index: 201;
+    opacity: 0;
+    visibility: hidden;
+}
+.menu.active
+{
+    opacity: 0.98;
+    visibility: visible;
+}
+.menu_content
+{
+    width: 100%;
+    height: 100%;
+}
+.menu_item
+{
+    position: relative;
+    margin-bottom: 3px;
+}
+.menu_item:last-child
+{
+    margin-bottom: 0px;
+}
+.menu_logo
+{
+    margin-bottom: 38px;
+}
+.menu_logo a img
+{
+    /* Kept empty */
+}
+.menu_logo .logo_text,
+.menu_logo .logo_sub
+{
+    /* Changed: Menu logo text to text-dark */
+    color: var(--text-dark);
+}
+.menu_item a
+{
+    display: inline-block;
+    position: relative;
+    font-size: 30px;
+    /* Changed: Menu item link color to text-dark */
+    color: var(--text-dark);
+    font-weight: 500;
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+}
+.menu_item a:hover
+{
+    /* Changed: Menu item hover color to primary color */
+    color: var(--primary-color);
+}
+.menu_close_container
+{
+    position: absolute;
+    top: 94px;
+    right: 122px;
+    width: 21px;
+    height: 21px;
+    cursor: pointer;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.menu_close
+{
+    top: 9px;
+    width: 21px;
+    height: 3px;
+    /* Changed: Menu close bar color to text-dark */
+    background: var(--text-dark);
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+}
+.menu_close::after
+{
+    display: block;
+    position: absolute;
+    top: -9px;
+    left: 9px;
+    content: '';
+    width: 3px;
+    height: 21px;
+    /* Changed: Menu close vertical bar color to text-dark */
+    background: var(--text-dark);
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+}
+.menu_close_container:hover .menu_close,
+.menu_close_container:hover .menu_close::after
+{
+    /* Changed: Menu close hover color to primary color */
+    background: var(--primary-color);
+}
+.menu_phone
+{
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: 15px;
+    font-size: 14px;
+    /* Changed: Menu phone text color to text-dark */
+    color: var(--text-dark);
+    font-weight: 500;
+}
+.menu_phone span
+{
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/*********************************
+5. Home
+*********************************/
+
+.home
+{
+    width: 100%;
+    height:441px;
+}
+.home_container
+{
+    position: absolute;
+    left: 0;
+    bottom: 173px;
+    width: 100%;
+}
+.home_title
+{
+    font-size: 30px;
+    font-weight: 600;
+    /* Changed: Home title color to text-light */
+    color: var(--text-light);
+    line-height: 0.75;
+}
+.breadcrumbs ul
+{
+    line-height: 0.75;
+}
+.breadcrumbs ul li
+{
+    display: inline-block;
+    position: relative;
+    font-size: 12px;
+    font-weight: 500;
+    /* Changed: Breadcrumb text color to text-light */
+    color: var(--text-light);
+    line-height: 0.75;
+}
+.breadcrumbs ul li:not(:last-child)::after
+{
+    display: inline-block;
+    content: '/';
+    margin-left: 3px;
+    margin-right: 3px;
+}
+.breadcrumbs ul li a
+{
+    font-size: 12px;
+    font-weight: 500;
+    /* Changed: Breadcrumb link color to text-light */
+    color: var(--text-light);
+    line-height: 0.75;
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+}
+.breadcrumbs ul li a:hover
+{
+    /* Changed: Breadcrumb link hover color to secondary (gold) */
+    color: var(--secondary-color);
+}
+
+/*********************************
+6. Home Search
+*********************************/
+
+.home_search
+{
+    width: 100%;
+    z-index: 100;
+    /* Changed: Home search background to dark */
+    background: var(--background-dark);
+}
+.home_search_container
+{
+    position: absolute;
+    top: -112px;
+    left: 15px;
+    width: calc(100% - 30px);
+    height: 90px;
+    border-radius: 45px;
+    padding: 10px;
+    /* Changed: Search container transparent background to secondary color */
+    background: rgba(212, 175, 55, 0.33); 
+}
+.home_search_content
+{
+    width: 100%;
+    height: 100%;
+    /* Changed: Search content background to light (for contrast with dark theme) */
+    background: var(--background-light);
+    border-radius: 35px;
+}
+.search_form
+{
+    position: relative;
+    height: 100%;
+}
+.search_form_content
+{
+    width: 100%;
+    height: 100%;
+    padding-left: 14px;
+    padding-right: 11px;
+}
+.search_form_content > div
+{
+    width: 20%;
+    height: 100%;
+    padding-left: 18px;
+    padding-right: 2px;
+}
+.search_form_content > div:not(:last-child)
+{
+    /* Changed: Border color to a soft dark/border color */
+    border-right: solid 2px var(--border-color); 
+}
+.search_form_select
+{
+    display: block;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+    -webkit-user-select: none;
+    background-image: url(../images/down.png); /* Keep the image path */
+    background-position: center right;
+    background-repeat: no-repeat;
+    border: none;
+    outline: none;
+    font-size: 13px;
+    font-weight: 400;
+    /* Changed: Select text color to text-dark (since background is light) */
+    color: var(--text-dark);
+    cursor: pointer;
+}
+.search_form_button
+{
+    width: 193px;
+    height: 100%;
+    border-radius: 35px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    /* Changed: Button text color to dark */
+    color: var(--text-dark);
+    text-transform: uppercase;
+    /* Changed: Button background to gold gradient */
+    background: var(--gold-gradient);
+}
+
+/*********************************
+7. About
+*********************************/
+
+.about
+{
+    width: 100%;
+    /* Changed: About section background to dark */
+    background: var(--background-dark);
+    padding-top: 91px;
+    padding-bottom: 100px;
+}
+.about_content
+{
+    padding-top: 16px;
+    padding-right: 10px;
+}
+.about_text
+{
+    margin-top: 55px;
+}
+.about_image
+{
+    width: 100%;
+}
+.about_image img
+{
+    max-width: 100%;
+}
+.milestones_row
+{
+    margin-top: 91px;
+}
+.milestone
+{
+    width: 100%;
+}
+.milestone_icon
+{
+    display: inline-block;
+    height: 74px;
+    width: 73px;
+}
+.milestone_icon img
+{
+    max-width: 100%;
+}
+.milestone_content
+{
+    padding-left: 22px;
+}
+.milestone_counter
+{
+    font-size: 30px;
+    font-weight: 500;
+    /* Changed: Milestone counter color to text-light */
+    color: var(--text-light);
+    line-height: 0.75;
+}
+.milestone_text
+{
+    font-size: 18px;
+    font-weight: 500;
+    /* Changed: Milestone text color to border-color */
+    color: var(--border-color);
+    margin-top: 12px;
+    line-height: 1.2;
+}
+
+/*********************************
+8. Realtors
+*********************************/
+
+.realtors
+{
+    width: 100%;
+    /* Changed: Realtors section background to a dark, slightly lighter shade than background-dark */
+    background: var(--primary-color);
+    padding-top: 105px;
+    padding-bottom: 74px;
+}
+.realtors_row
+{
+    margin-top: 63px;
+}
+.realtor
+{
+    width: 100%;
+    /* Changed: Realtor card background to light (or text-light) for contrast */
+    background: var(--background-light);
+    z-index: 2;
+    margin-bottom: 58px;
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+}
+.realtor_outer:hover .realtor
+{
+    /* Changed: Realtor card hover shadow to luxury shadow */
+    box-shadow: var(--luxury-shadow);
+}
+.realtor_image
+{
+    width: 100%;
+}
+.realtor_image img
+{
+    max-width: 100%;
+}
+.realtor_body
+{
+    padding-top: 23px;
+    padding-bottom: 41px;
+    text-align: center;
+}
+.realtor_title
+{
+    font-size: 18px;
+    font-weight: 600;
+    /* Changed: Realtor title color to text-dark (since card background is light) */
+    color: var(--text-dark);
+}
+.realtor_subtitle
+{
+    font-size: 14px;
+    font-weight: 400;
+    /* Changed: Realtor subtitle color to border-color (as a soft dark contrast) */
+    color: var(--border-color); 
+    margin-top: -1px;
+}
+.realtor_link
+{
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: -29px;
+    width: 46px;
+    height: 57px;
+    /* Changed: Realtor link background to accent color/border color */
+    background: var(--border-color); 
+    border-radius: 23px;
+    text-align: center;
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+}
+.realtor_link a
+{
+    display: block;
+    line-height: 57px;
+    font-size: 30px;
+    font-weight: 400;
+    /* Changed: Realtor link icon color to text-dark */
+    color: var(--text-dark);
+}
+.realtor_link_background_container
+{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 1;
+}
+.realtor_link_background_container > div
+{
+    width: 100%;
+    height: 100%;
+}
+.realtor_link_background
+{
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: -29px;
+    width: 46px;
+    height: 57px;
+    /* Changed: Realtor link background to border color */
+    background: var(--border-color);
+    border-radius: 23px;
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+}
+.realtor_outer:hover .realtor_link_background
+{
+    /* Changed: Realtor link background hover shadow to luxury shadow */
+    box-shadow: 0px 20px 21px rgba(212, 175, 55, 0.25);
+}
+.realtor_outer:hover .realtor_link
+{
+    /* Changed: Realtor link hover background to gold gradient */
+    background: var(--gold-gradient);
+}
+
+/*********************************
+9. Newsletter
+*********************************/
+
+.newsletter
+{
+    width: 100%;
+    padding-top: 107px;
+    padding-bottom: 105px;
+    /* NOTE: Newsletter background should be set in the HTML/parent element, 
+       but for the context of this section, it often has a distinct background.
+       Keeping it transparent/default here. */
+}
+.newsletter_title
+{
+    font-size: 30px;
+    font-weight: 600;
+    /* Changed: Newsletter title color to text-light */
+    color: var(--text-light);
+    line-height: 0.75;
+    white-space: nowrap;
+}
+.newsletter_subtitle
+{
+    font-size: 14px;
+    font-weight: 400;
+    /* Changed: Newsletter subtitle color to text-light (or border-color) */
+    color: var(--border-color);
+    line-height: 0.75;
+    margin-top: 15px;
+}
+.newsletter_content
+{
+    /* Kept empty */
+}
+.newsletter_form_container
+{
+    margin-left: 30px;
+    width: 100%;
+}
+.newsletter_form
+{
+    display: block;
+    position: relative;
+    width: 100%;
+}
+.newsletter_input
+{
+    width: 100%;
+    height: 72px;
+    border-radius: 36px;
+    /* Changed: Newsletter input background to background-light (for contrast) */
+    background: var(--background-light);
+    border: none;
+    outline: none;
+    padding-left: 45px;
+    /* Added: Input text color for dark theme usability */
+    color: var(--text-dark);
+}
+.newsletter_input::-webkit-input-placeholder
+{
+    font-size: 11px !important;
+    font-weight: 400 !important;
+    font-style: italic;
+    /* Changed: Placeholder color to a muted dark/border color */
+    color: var(--border-color) !important;
+}
+.newsletter_input:-moz-placeholder
+{
+    font-size: 11px !important;
+    font-weight: 400 !important;
+    font-style: italic;
+    color: var(--border-color) !important;
+}
+.newsletter_input::-moz-placeholder
+{
+    font-size: 11px !important;
+    font-weight: 400 !important;
+    font-style: italic;
+    color: var(--border-color) !important;
+} 
+.newsletter_input:-ms-input-placeholder
+{ 
+    font-size: 11px !important;
+    font-weight: 400 !important;
+    font-style: italic;
+    color: var(--border-color) !important;
+}
+.newsletter_input::input-placeholder
+{
+    font-size: 11px !important;
+    font-weight: 400 !important;
+    font-style: italic;
+    color: var(--border-color) !important;
+}
+.newsletter_button
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 193px;
+    height: 72px;
+    /* Changed: Button text color to dark */
+    color: var(--text-dark);
+    border-radius: 36px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    /* Changed: Button background to gold gradient */
+    background: var(--gold-gradient);
+}
+.newsletter_button:active
+{
+    outline: none;
+    border: none;
+}
+
+/*********************************
+10. Footer
+*********************************/
+
+.footer
+{
+    width: 100%;
+}
+.footer_main
+{
+    width: 100%;
+    /* Changed: Footer main background to primary color */
+    background: var(--primary-color);
+    padding-top: 80px;
+    padding-bottom: 72px;
+}
+.footer_about_text
+{
+    font-size: 12px;
+    font-weight: 500;
+    font-style: italic;
+    /* Changed: Footer about text color to text-light */
+    color: var(--text-light);
+    margin-top: 39px;
+}
+.footer_title
+{
+    font-size: 18px;
+    font-weight: 500;
+    /* Changed: Footer title color to gold-color */
+    color: var(--gold-color);
+}
+.footer_latest
+{
+    padding-top: 40px;
+}
+.footer_latest_image
+{
+    width: 86px;
+    height: 86px;
+}
+.footer_latest_image img
+{
+    max-width: 100%;
+}
+.footer_latest_content
+{
+    padding-left: 17px;
+}
+.footer_latest_location
+{
+    font-size: 11px;
+    font-weight: 400;
+    /* Changed: Latest location color to text-light */
+    color: var(--text-light);
+    line-height: 0.75;
+}
+.footer_latest_name
+{
+    margin-top: 8px;
+}
+.footer_latest_name a
+{
+    font-size: 16px;
+    font-weight: 400;
+    /* Changed: Latest name link color to text-light */
+    color: var(--text-light);
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+}
+.footer_latest_name a:hover
+{
+    /* Changed: Latest name link hover color to secondary (gold) */
+    color: var(--secondary-color);
+}
+.footer_latest_price
+{
+    font-size: 14px;
+    font-weight: 600;
+    /* Changed: Latest price color to secondary (gold) */
+    color: var(--secondary-color);
+    margin-top: 7px;
+}
+.footer_bar
+{
+    width: 100%;
+    /* Changed: Footer bar background to background-dark (or slightly darker) */
+    background: var(--background-dark);
+}
+.footer_bar_content
+{
+    height: 97px;
+}
+.cr
+{
+    font-size: 14px;
+    font-weight: 500;
+    /* Changed: Copyright text color to border-color */
+    color: var(--border-color);
+}
+.footer_nav
+{
+    margin-left: 170px;
+}
+.footer_nav ul li
+{
+    display: inline-block;
+}
+.footer_nav ul li:not(:last-child)
+{
+    margin-right: 47px;
+}
+.footer_nav ul li a
+{
+    font-size: 14px;
+    font-weight: 500;
+    /* Changed: Footer nav link color to border-color */
+    color: var(--border-color);
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+}
+.footer_nav ul li a:hover
+{
+    /* Changed: Footer nav link hover color to secondary (gold) */
+    color: var(--secondary-color);
+}
+.footer_phone
+{
+    font-size: 14px;
+    /* Changed: Footer phone color to border-color */
+    color: var(--border-color);
+    font-weight: 500;
+}
+.footer_phone span
+{
+    text-transform: uppercase;
+    font-weight: 600;
+}
