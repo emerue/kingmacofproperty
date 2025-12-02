@@ -1,0 +1,26 @@
+{
+    "name": "Existing Django Project Environment",
+    // Use the Microsoft Python Dev Container image with Python 3.11
+    "image": "mcr.microsoft.com/devcontainers/python:3.11", 
+    
+    // Extensions recommended for Python and Django development
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "batisteo.vscode-django" 
+            ]
+        }
+    },
+    
+    // Command to run once after the container is created:
+    // 1. Install all dependencies defined in requirements.txt
+    // 2. Run database migrations to ensure the schema is ready
+    "postCreateCommand": "pip install -r requirements.txt && python manage.py migrate --no-input",
+    
+    // Port 8000 is automatically forwarded when the server starts
+    "forwardPorts": [8000],
+    
+    "appPort": 8000 
+}
